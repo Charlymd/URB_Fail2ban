@@ -4,7 +4,8 @@ if [[ $EUID -ne 0 ]]; then
    exit 1
 fi
 
-sed -i 's/^enabled.*/enabled = false/' /etc/fail2ban/jail.d/urbackup.conf
+sed -i 's/^enabled.*/enabled = false/' /etc/fail2ban/jail.d/urbackup-gui.conf
+sed -i 's/^enabled.*/enabled = false/' /etc/fail2ban/jail.d/urbackup-client.conf
 echo "urbackup IPTable jail disabled"
 
 fail2ban-client reload
